@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20250410-2
+      author: William Gadney
+      changes:
+        - addColumn:
+            tableName: greeting
+            columns:
+              - column:
+                  name: message_date
+                  type: integer
+                  constraints:
+                    nullable: false

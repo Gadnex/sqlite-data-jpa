@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20250409-1
+      author: William Gadney
+      changes:
+        - createTable:
+            tableName: greeting
+            columns:
+              - column:
+                  name: id
+                  type: INTEGER
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: greetingPK
+              - column:
+                  name: message
+                  type: VARCHAR(150)
+                  constraints:
+                    nullable: false

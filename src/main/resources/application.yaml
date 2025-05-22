@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: sqlite-data-jdbc
+  threads:
+    virtual:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+  datasource:
+    url: jdbc:sqlite:db.sqlite
+    hikari:
+      connection-init-sql: PRAGMA journal_mode=WAL; PRAGMA synchronous=NORMAL; PRAGMA cache_size=-10000; PRAGMA temp_store=MEMORY;
+
+server:
+  port: 8080
+
+management:
+  server:
+    port: 9080
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+  info:
+    java.enabled: true
+    env.enabled: true
+
+gg:
+  jte:
+    usePrecompiledTemplates: true
+    localizer:
+      inject: true
+
+logging:
+  level:
+    '[org.apache.catalina.core.ContainerBase]': OFF

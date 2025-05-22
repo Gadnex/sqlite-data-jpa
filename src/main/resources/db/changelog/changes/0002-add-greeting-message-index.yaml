@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20250410-1
+      author: William Gadney
+      changes:
+        - createIndex:
+            indexName: idx_greeting_message
+            tableName: greeting
+            columns:
+              - column:
+                  name: message
